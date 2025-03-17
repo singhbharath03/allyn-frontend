@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { getApiUrl } from "@/app/utils/env";
 
 interface Market {
   id: number;
@@ -25,7 +26,7 @@ export default function Home() {
   useEffect(() => {
     const fetchMarkets = async () => {
       try {
-        const response = await fetch('http://localhost:81/api/markets/attention/');
+        const response = await fetch(getApiUrl('api/markets/attention/'));
         if (!response.ok) {
           throw new Error('Failed to fetch markets');
         }

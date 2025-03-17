@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { useParams } from "next/navigation";
+import { getApiUrl } from "@/app/utils/env";
 
 interface Market {
   id: number;
@@ -63,7 +64,7 @@ export default function MarketDetail() {
     const fetchMarketAndTrades = async () => {
       try {
         // Get markets to find the current one by id
-        const marketsResponse = await fetch('http://localhost:81/api/markets/attention/');
+        const marketsResponse = await fetch(getApiUrl('api/markets/attention/'));
         if (!marketsResponse.ok) {
           throw new Error('Failed to fetch markets');
         }
@@ -77,7 +78,7 @@ export default function MarketDetail() {
         setMarket(currentMarket);
         
         // Fetch trades using the market ID
-        const tradesResponse = await fetch(`http://localhost:81/api/markets/attention/trades/${id}`);
+        const tradesResponse = await fetch(getApiUrl(`api/markets/attention/trades/${id}`));
         if (!tradesResponse.ok) {
           throw new Error('Failed to fetch trades');
         }
