@@ -71,7 +71,7 @@ export default function Home() {
                 className="block hover:shadow-lg transition-shadow duration-300 border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden"
               >
                 <div className="p-6">
-                  <Link href={`/explorer/${market.slug}`}>
+                  <Link href={`/explorer/market/${market.id}`}>
                     <div className="flex items-center justify-center mb-4 h-40">
                       <Image
                         src={market.image_url}
