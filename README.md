@@ -14,7 +14,7 @@ NEXT_PUBLIC_API_BASE_URL=http://44.204.6.181:81
 # or you can use http://localhost:81 if using local deployment
 ```
 
-First, run the development server:
+Then run the development server:
 
 ```bash
 npm run dev
